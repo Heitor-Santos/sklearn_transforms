@@ -1,5 +1,4 @@
 from sklearn.base import BaseEstimator, TransformerMixin
-import pandas as pd
 
 # All sklearn Transforms must have the `transform` and `fit` methods
 class DropColumns(BaseEstimator, TransformerMixin):
@@ -13,5 +12,4 @@ class DropColumns(BaseEstimator, TransformerMixin):
         # Primeiro realizamos a cópia do dataframe 'X' de entrada
         data = X.copy()
         # Retornamos um novo dataframe sem as colunas indesejadas
-        data = data.dropna()
         return data.drop(labels=self.columns, axis='columns')
